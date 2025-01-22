@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Mindful Reminder",
+  "version": "1.0",
+  "description": "Shows a reminder message when visiting Reddit",
+  "permissions": ["storage", "scripting"],
+  "host_permissions": ["*://*.reddit.com/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.reddit.com/*"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
